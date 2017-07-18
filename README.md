@@ -7,9 +7,9 @@ For beginners in discord.js, just focus on command, not on the login, the prefix
 
 Because... No, seriously at the beginning I made this container for me because I don't want to recod everything for each bot that I create. That really helps me and I think someone can also find this helpful... so I share this!
 
-## Installation
+## Installation _(for windows)_
 
-To install the bot you need node.js 6.0.0 or newer then open a cmd with shift+rightclick -> open command windows here. In the cmd type 'npm install' when it's done just type 'npm start' and...
+To install the bot you need node.js 6.0.0 or newer. Clone or download this repository then open a cmd with shift+rightclick -> open command windows here. In the cmd type `npm install` to install dependencies. Configure config.json (add yout token put your prefix etc...). Type `npm getlink` to get the invitation link for your bot. When your okay type `npm start` and...
 The bot is launched !!! Now you need to code the commands and the event or grab them...
 
 ## Creating a command
