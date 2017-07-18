@@ -65,6 +65,7 @@ That's all! (for the event)
 
 ## Other stuff
 
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 If you found English error I'm sorry (I'm french)
 ContainScord isn't an API it's container to make simplify the creation of command / events. 
 ContainScord use discord.js.
