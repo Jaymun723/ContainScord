@@ -12,4 +12,5 @@ exports.args = ""
 exports.run = (client, args) => {
 	// utils.display_mes is for corect display of the message
 	console.log(u.display_mes(u.mes.events.ready))
+  console.log(u.display_mes(u.mes.events.invite_link, client.user.id))
 }

@@ -7,19 +7,19 @@ const messages = require('./messages.json')
 
 
 
-exports.display_mes = (text, args) => {
+exports.display_mes = (text, arg) => {
 	if (text.includes('<bot>')) {
 		var responce = text.replace("<bot>", `${config.name}`)
 	} else if (text.includes('<error>')) {
-		var responce = text.replace("<error>", `${args}`)
+		var responce = text.replace("<error>", `${arg}`)
 	} else if (text.includes('<server>')) {
-    var responce = text.replace("<server>", `${args}`)
+    var responce = text.replace("<server>", `${arg}`)
   } else if (text.includes('<prefix>')) {
     var responce = text.replace("<prefix>", `${config.prefix}`)
   } else if (text.includes('<placeholder>')) {
-    var responce = text.replace("<placeholder>", `${args}`)
+    var responce = text.replace("<placeholder>", `${arg}`)
   } else if (text.includes('<command>')) {
-    var responce = text.replace("<command>", `${args}`)
+    var responce = text.replace("<command>", `${arg}`)
   } 
 	return responce
 }
