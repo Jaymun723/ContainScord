@@ -8,7 +8,7 @@ const config = require('./../data/config.json')
 exports.name = "message"
 exports.args = "message"
 
-exports.run = (client, message) => {
+exports.run = function (client, message) {
   // Preventing a infinite loop with other bot
   if (message.author.bot) return
   

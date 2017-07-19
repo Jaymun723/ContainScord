@@ -18,7 +18,7 @@ Create your commands in the command directory.
 > Example: I want a ping command
 So I create a file named ping.js in the commands directory. In the file I write the basic requirement:
 ```javascript
-exports.run = (client, message, args, config, messages, utils) => {}
+exports.run = function (client, message, args, config, messages, utils) {}
 ```
 In the two {} I write my code for example:
 ```javascript
@@ -27,7 +27,7 @@ message.channel.send('pong!')
 So in my file named ping.js I write:
 ```javascript
 //Requirement
-exports.run = (client, message, args, config, messages, utils) => {
+exports.run = function (client, message, args, config, messages, utils) {
 	//My code
 	message.channel.send('pong!')
 }
@@ -45,7 +45,7 @@ exports.name = "guildMemberAdd"
 // 'guildMemberAdd' is the name of the event file all events here: https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=channelCreate
 exports.args = "member"
 // 'member' is the argument how we want to use in the event
-exports.run = (client, member) => {}
+exports.run = function (client, member) {}
 // remember 'member' is the argument how we define just before
 ```
 In the two {} I write my code for example:
@@ -55,7 +55,7 @@ So in my file named <what you want>.js I write:
 //Requirement
 exports.name = "guildMemberAdd" 
 exports.args = "member"
-exports.run = (client, member) => {
+exports.run = function (client, member) {
 	//My code
 	member.send('Hi, welcome to '+member.guild.name)
 }
