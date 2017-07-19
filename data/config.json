@@ -1,6 +1,6 @@
 {
   "_Bot config" : "Put your token and the name.",
-  "token" : "MzEwMzA5NDY1OTg1Mzg0NDQ5.DFCUjQ.V6tVl6F314N1T-5vaTVG-ksIJ3w",
+  "token" : "bot token here",
   "name" : "Awesome Bot",
   "_Prefix config" : "You can put a sign like ! or ; or $ etc... put mention if you want a @<name of the bot> as prefix.",
   "prefix" : "mention",
