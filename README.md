@@ -1,6 +1,10 @@
 # ContainScord
 
-**A container to easily make discord bot!**
+[![Known Vulnerabilities](https://snyk.io/test/github/jaymun723/containscord/badge.svg)](https://snyk.io/test/github/jaymun723/containscord) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://choosealicense.com/licenses/mit/) [![Node version](https://img.shields.io/badge/node-v6.0.0%2B-14ace8.svg)](https://nodejs.org/)
+
+
+>**A container to easily make discord bot!**
+
 For beginners in discord.js, just focus on command, not on the login, the prefix, args etc ... ContainScord do the rest ! For people how knows more about discord.js you don't have to write an endless if/else statement and you will clearly see all commands and events.
 
 ## Why?
