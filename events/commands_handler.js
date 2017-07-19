@@ -4,7 +4,6 @@
 */
 
 const config = require('./../data/config.json')
-const u = require('./../data/utils.js')
 
 exports.name = "message"
 exports.args = "message"
@@ -63,9 +62,9 @@ exports.run = (client, message) => {
   // Ex: write a file named ping.js in the commands directory to make a ping command
   try {
     var commandFile = require(`./../commands/${command}.js`)
-    commandFile.run(client, message, args, config, u)
+    commandFile.run(client, message, args, config)
   } catch (err) {
     var notfoundFile = require('./../commands/error.js')
-    notfoundFile.run(client, message, args, config, u, err)
+    notfoundFile.run(client, message, args, config, err)
   }
 }

@@ -6,5 +6,5 @@ exports.args = "member"
 
 // Send a message to new member
 exports.run = (client, member) => {
-	member.send(u.display_mes(u.mes.events.welcome_message, member.guild.name))
+	member.send('Hi welcome to '+member.guild.name)
 }
