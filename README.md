@@ -1,6 +1,6 @@
 # ContainScord
 
-[![Known Vulnerabilities](https://snyk.io/test/github/jaymun723/containscord/badge.svg)](https://snyk.io/test/github/jaymun723/containscord) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://choosealicense.com/licenses/mit/) [![Node version](https://img.shields.io/badge/node-v6.0.0%2B-14ace8.svg)](https://nodejs.org/)
+[![Known Vulnerabilities](https://snyk.io/test/github/jaymun723/containscord/badge.svg)](https://snyk.io/test/github/jaymun723/containscord) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://choosealicense.com/licenses/mit/) [![Node version](https://img.shields.io/badge/node-v6.0.0%2B-14ace8.svg)](https://nodejs.org/) [![Build](https://api.travis-ci.org/Jaymun723/ContainScord.svg?branch=master)](https://travis-ci.org/Jaymun723/ContainScord)
 
 
 >**A container to easily make discord bot!**
