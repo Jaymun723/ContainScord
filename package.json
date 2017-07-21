@@ -4,7 +4,8 @@
   "description": "A container to easily made discord bot !",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",
