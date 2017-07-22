@@ -66,7 +66,7 @@ exports.run = function (client, message) {
     var commandFile = require(`./../commands/${command}.js`)
     commandFile.run(client, message, args, config)
   } catch (err) {
-    var notfoundFile = require('./../commands/error.js')
+    var notfoundFile = require('./../commands/not_found.js')
     notfoundFile.run(client, message, args, config, err, command)
   }
 }
