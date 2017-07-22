@@ -24,12 +24,14 @@ exports.run = function (client, message) {
     if (!message.content.startsWith(prefix)) return
 
     // Define args
-    // Ex: @Bot#1234 commands true @badGuy#1234 No swag
+    // Ex (with mention prefix): @Bot#1234 commands true @badGuy#1234 No swag
+    // Ex (with ! for prefix): !commands true @badGuy#1234 No swag
     // args[0] = true, args[1] = @badGuy#1234, args[2] = No, args[3] = swag ... etc
-    args = message.content.split(/\s+/g).slice(2)
+    args = message.content.split(/\s+/g).slice(2).toLowerCase()
 
     // Define command
-    // Ex: @Bot#1234 ping
+    // Ex (with mention prefix): @Bot#1234 ping
+    // Ex (with ! for prefix): !ping
     // command = ping 
     command = message.content.split(/\s+/g).slice(1)[0].toLowerCase()
 
