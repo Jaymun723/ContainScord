@@ -5,22 +5,21 @@
 
 const config = require('./../data/config.json')
 
-exports.name = "message"
-exports.args = "message"
+exports.name = 'message'
+exports.args = 'message'
 
 exports.run = function (client, message) {
   // Preventing a infinite loop with other bot
   if (message.author.bot) return
-  
   // Define var args and command
   var args
   var command
 
-  if (config.prefix === "mention") {
-    // Define the prefix 
+  if (config.prefix === 'mention') {
+    // Define the prefix
     const prefix = `<@${client.user.id}>`
 
-    // Is there isn't the prefix stop 
+    // Is there isn't the prefix stop
     if (!message.content.startsWith(prefix)) return
 
     // Define args
@@ -32,12 +31,11 @@ exports.run = function (client, message) {
     // Define command
     // Ex (with mention prefix): @Bot#1234 ping
     // Ex (with ! for prefix): !ping
-    // command = ping 
+    // command = ping
     command = message.content.split(/\s+/g).slice(1)[0].toLowerCase()
-
   } else {
     // Is there isn't the prefix stop
-    if(!message.content.startsWith(config.prefix)) return
+    if (!message.content.startsWith(config.prefix)) return
 
     // Define args
     // Ex: !commands true @badGuy#1234 No swag
@@ -46,17 +44,16 @@ exports.run = function (client, message) {
 
     // Define command
     // Ex: !ping
-    // command = ping 
+    // command = ping
     command = message.content.split(/\s+/g)[0].slice(config.prefix.length).toLowerCase()
   }
 
-
   // This code is for the console_on_command (in config.json)
-  if (config.console_on_command === "true") {
+  if (config.console_on_command === 'true') {
     if (args) {
-      console.log(message.author.username+' in '+message.guild.name+' -> '+command+' '+args.join(' '))
+      console.log(message.author.username + ' in ' + message.guild.name + ' -> ' + command + ' ' + args.join(' '))
     } else {
-      console.log(message.author.username+' in '+message.guild.name+' -> '+command)
+      console.log(message.author.username + ' in ' + message.guild.name + ' -> ' + command)
     }
   }
 
