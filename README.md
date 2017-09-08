@@ -18,54 +18,11 @@ The bot is launched !!! Now you need to code the commands and the event or grab 
 
 ## Creating a command
 
-Create your commands in the command directory. 
-> Example: I want a ping command
-So I create a file named ping.js in the commands directory. In the file I write the basic requirement:
-```javascript
-exports.run = function (client, message, args, config, messages, utils) {}
-```
-In the two {} I write my code for example:
-```javascript
-message.channel.send('pong!')
-```
-So in my file named ping.js I write:
-```javascript
-//Requirement
-exports.run = function (client, message, args, config, messages, utils) {
-	//My code
-	message.channel.send('pong!')
-}
-```
-And if I write <prefix>ping in discord the bot reply me 'pong!'
-Magic ! (and I think simple)
+W.I.P. for version 2.0
 
 ## Creating an event 
 
-Want to use an event ? Write it in the events directory
-> Example: I want that my bot message new user
-So I create a file named <what you want>.js in the events directory. In the file I write the basic requirement: 
-```javascript
-exports.name = "guildMemberAdd" 
-// 'guildMemberAdd' is the name of the event file all events here: https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=channelCreate
-exports.args = "member"
-// 'member' is the argument how we want to use in the event
-exports.run = function (client, member) {}
-// remember 'member' is the argument how we define just before
-```
-In the two {} I write my code for example:
-member.send('Hi welcome to '+member.guild.name)
-So in my file named <what you want>.js I write:
-```javascript
-//Requirement
-exports.name = "guildMemberAdd" 
-exports.args = "member"
-exports.run = function (client, member) {
-	//My code
-	member.send('Hi, welcome to '+member.guild.name)
-}
-```
-And if a new user connected to the server he receives 'Hi, welcome to <name of the server>'
-That's all! (for the event)
+W.I.P. for version 2.0
 
 ## Other stuff
 
