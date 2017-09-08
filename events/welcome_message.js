@@ -1,8 +1,13 @@
-// Theses three exports add required
-exports.name = 'guildMemberAdd'
-exports.args = 'member'
+// Export the event
+module.exports = {
+  // Name of the event
+  name: 'guildMemberAdd',
 
-// Send a message to new member
-exports.run = function (client, member) {
-  member.send('Hi welcome to ' + member.guild.name)
+  // Args if the event
+  args: 'member',
+
+  // This code of the event
+  run: function (client, member) {
+    member.send('Hi welcome to ' + member.guild.name)
+  }
 }
