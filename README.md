@@ -1,71 +1,66 @@
 # ContainScord
 
-[![Known Vulnerabilities](https://snyk.io/test/github/jaymun723/containscord/badge.svg)](https://snyk.io/test/github/jaymun723/containscord) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://choosealicense.com/licenses/mit/) [![Node version](https://img.shields.io/badge/node-v6.0.0%2B-14ace8.svg)](https://nodejs.org/) [![Build](https://api.travis-ci.org/Jaymun723/ContainScord.svg?branch=master)](https://travis-ci.org/Jaymun723/ContainScord)
+[![Known Vulnerabilities](https://snyk.io/test/github/jaymun723/containscord/badge.svg)](https://snyk.io/test/github/jaymun723/containscord) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://choosealicense.com/licenses/mit/) [![Node version](https://img.shields.io/badge/node-v8.4.0%2B-14ace8.svg)](https://nodejs.org/) [![Build](https://api.travis-ci.org/Jaymun723/ContainScord.svg?branch=master)](https://travis-ci.org/Jaymun723/ContainScord)
 
 
->**A container to easily make discord bot!**
+> **A container to easily make discord bot!**
 
 For beginners in discord.js, just focus on command, not on the login, the prefix, args etc ... ContainScord do the rest ! For people how knows more about discord.js you don't have to write an endless if/else statement and you will clearly see all commands and events.
 
-## Why?
+## Why use ContainScord ?
 
-Because... No, seriously at the beginning I made this container for me because I don't want to recod everything for each bot that I create. That really helps me and I think someone can also find this helpful... so I share this!
+ConatinScord is fully customisable, fast, simple, clear. Feathuring:
+ * Customisable command hanlder
+ * Easy prefix: support mention, single chart, words (like 'pls ') and much more !
+ * Clear event code
+ * [CLI](https://github.com/Jaymun723/ContainScord-CLI)
+ * Symply create commands
 
-## Installation _(for windows)_
+## Installation without the cli _(for windows)_ 
 
-To install the bot you need node.js 6.0.0 or newer. Clone or download this repository then open a cmd with shift+rightclick -> open command windows here. In the cmd type `npm install` to install dependencies. Configure config.json (add yout token put your prefix etc...). When your okay type `npm start` use the link to invite the bot to your server and...
+To install the bot you need node.js 8.4.0 or newer. Clone or download this repository then open a cmd with shift+rightclick -> open command windows here. In the cmd type `npm install` to install dependencies. Configure config.json (add yout token put your prefix etc...). When your okay type `node index.js` use the link to invite the bot to your server and...
 The bot is launched !!! Now you need to code the commands and the event or grab them...
+
+## Installation with the cli
+
+Refere to this: https://github.com/Jaymun723/ContainScord-CLI#readme
 
 ## Creating a command
 
-Create your commands in the command directory. 
-> Example: I want a ping command
-So I create a file named ping.js in the commands directory. In the file I write the basic requirement:
+Go to the `commands` directory and create a new file with extension `.js`.
+Paste in the basic requirement:
 ```javascript
-exports.run = function (client, message, args, config, messages, utils) {}
-```
-In the two {} I write my code for example:
-```javascript
-message.channel.send('pong!')
-```
-So in my file named ping.js I write:
-```javascript
-//Requirement
-exports.run = function (client, message, args, config, messages, utils) {
-	//My code
-	message.channel.send('pong!')
+module.exports = {
+  name: '',
+  channel: '',
+  run: function (client, message, info) {
+
+  }
 }
 ```
-And if I write <prefix>ping in discord the bot reply me 'pong!'
-Magic ! (and I think simple)
+The `name` field is what people must type to invoke the command. The `channel` field is where the command can be invoked. Support: all, dm, text, and a channel name like #botcommand. The `run` field is where the magic happends ! In the function put your code ! **Important** ContainScord use [Discord.js](https://discord.js.org/#/) so in the function refere to [discord.js documentation](https://discord.js.org/#/docs/main/stable/general/welcome).
 
-## Creating an event 
+## Example command
 
-Want to use an event ? Write it in the events directory
-> Example: I want that my bot message new user
-So I create a file named <what you want>.js in the events directory. In the file I write the basic requirement: 
 ```javascript
-exports.name = "guildMemberAdd" 
-// 'guildMemberAdd' is the name of the event file all events here: https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=channelCreate
-exports.args = "member"
-// 'member' is the argument how we want to use in the event
-exports.run = function (client, member) {}
-// remember 'member' is the argument how we define just before
-```
-In the two {} I write my code for example:
-member.send('Hi welcome to '+member.guild.name)
-So in my file named <what you want>.js I write:
-```javascript
-//Requirement
-exports.name = "guildMemberAdd" 
-exports.args = "member"
-exports.run = function (client, member) {
-	//My code
-	member.send('Hi, welcome to '+member.guild.name)
+// Export the command
+module.exports = {
+  // Name of the command
+  name: 'example',
+
+  // Support: 'all', 'dm', 'text', or a channel name like '#bot_command'
+  channel: 'all',
+
+  // Description (optional for external use like info.commands.<name>.desc):
+  description: 'Example description...',
+
+  // Execution of the command
+  run: function (client, message, info) {
+    message.reply('Here is an exemple !')
+  }
 }
 ```
-And if a new user connected to the server he receives 'Hi, welcome to <name of the server>'
-That's all! (for the event)
+This code create a command named 'example' how works everywhere and when it's use __(like '<prefix>example')__ it reply to you 'Here is an exemple'.
 
 ## Other stuff
 

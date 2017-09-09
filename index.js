@@ -11,12 +11,12 @@ fs.readdir('./events/', function (err, files) {
   if (err) return console.error(err)
   // For each file of 'files' this loop require 'file'.js
   files.forEach(function (file) {
-  // If the file start with '-' stop
+    // If the file start with '-' stop
     if (file.charAt(0) === '-') return
     try {
       var eventFile = require(`./events/${file}`)
       var eventName = eventFile.name
-      var eventArgs = eventFile.args
+      if (!eventFile.run) return
       client.on(eventName, function (eventArgs) { eventFile.run(client, eventArgs) })
     } catch (err) {
       console.error(err)
