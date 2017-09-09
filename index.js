@@ -16,6 +16,7 @@ fs.readdir('./events/', function (err, files) {
     try {
       var eventFile = require(`./events/${file}`)
       var eventName = eventFile.name
+      if (!eventFile.run) return
       client.on(eventName, function (eventArgs) { eventFile.run(client, eventArgs) })
     } catch (err) {
       console.error(err)

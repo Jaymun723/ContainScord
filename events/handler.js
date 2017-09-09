@@ -12,13 +12,11 @@ var commands = {}
 // Read the commands directory
 fs.readdir('./commands', function (err, files) {
   if (err) return console.error(err)
-  console.log('Commands loaded:')
   files.forEach(function (file) {
     // Tip: disable command to be loaded by puting a '-' as first char
-    if (!`${file}`.startsWith('-')) {
+    if (!`${file}`.startsWith('-') && require(path.join(__dirname, '../commands/', file)).channel) {
       // Create properties for the var commands
       commands[`${require(path.join(__dirname, '../commands/', file)).name}`.toLowerCase()] = require(path.join(__dirname, '../commands/', file))
-      console.log(require(path.join(__dirname, '../commands/', file)).name)
     }
   })
 })
@@ -26,7 +24,6 @@ fs.readdir('./commands', function (err, files) {
 // Requirement to reconize this file as a event file
 module.exports = {
   name: 'message',
-  args: 'message',
   run: function (client, message) {
     // Basic info object
     var info = {

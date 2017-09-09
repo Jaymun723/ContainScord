@@ -2,6 +2,7 @@ var config = require('../data/config.json')
 
 module.exports = function (client, message, info) {
   // Define prefix
+
   if (config.prefix === 'mention') {
     info.prefix = `<@${client.user.id}>`
   } else {
