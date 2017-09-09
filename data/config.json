@@ -1,4 +1,6 @@
 {
+  "_Version of ContainScord" : "be carreful while changing this",
+  "version" : "1.0.0",
   "_Bot config" : "Put your token and the name.",
   "token" : "bot token here",
   "name" : "Awesome Bot",
