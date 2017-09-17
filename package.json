@@ -1,6 +1,6 @@
 {
   "name": "containscord",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A container to easily made discord bot !",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/Jaymun723/ContainScord",
   "dependencies": {
-    "discord.js": "^11.1.0",
+    "discord.js": "^11.2.1",
     "fs": "0.0.1-security"
   }
 }

@@ -4,5 +4,5 @@ module.exports = function (client, message, info) {
   // Define the args and put them in the info object
   info.args = message.content.toLowerCase().slice(info.prefix.length + info.command.length).split(/\s+/g)
 
-  return require('./handlecommand.js')(client, message, info)
+  return require('./textchannel.js')(client, message, info)
 }
