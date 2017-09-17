@@ -33,12 +33,13 @@ Paste in the basic requirement:
 module.exports = {
   name: '',
   channel: '',
+  permission: '',
   run: function (client, message, info) {
 
   }
 }
 ```
-The `name` field is what people must type to invoke the command. The `channel` field is where the command can be invoked. Support: all, dm, text, and a channel name like #botcommand. The `run` field is where the magic happends ! In the function put your code ! **Important** ContainScord use [Discord.js](https://discord.js.org/#/) so in the function refere to [discord.js documentation](https://discord.js.org/#/docs/main/stable/general/welcome).
+The `name` field is what people must type to invoke the command. The `channel` field is where the command can be invoked. Support: all, dm, text, and a channel name like #botcommand. The `permission` field restrict a command to specific role / permission. Support: all, owner, a permission name like KICK_MEMBERS or a role name like admin. The `run` field is where the magic happends ! In the function put your code ! **Important** ContainScord use [Discord.js](https://discord.js.org/#/) so in the function refere to [discord.js documentation](https://discord.js.org/#/docs/main/stable/general/welcome).
 
 ## Example command
 
@@ -54,6 +55,14 @@ module.exports = {
   // Description (optional for external use like info.commands.<name>.desc):
   description: 'Example description...',
 
+  // Support: 'all' (for all people)
+  //          'owner' (only the owner)
+  //          'KICK_MEMBERS' (discord permission, link to see all of them: https://goo.gl/Zcxwko or chec the role.js file in the data directory)
+  //           /!\ Case sensitive
+  //          'admin' (Discord Role)
+  //           /!\ Case sensitive
+  permission: 'all',
+
   // Execution of the command
   run: function (client, message, info) {
     message.reply('Here is an exemple !')
@@ -61,6 +70,18 @@ module.exports = {
 }
 ```
 This code create a command named 'example' how works everywhere and when it's use __(like '<prefix>example')__ it reply to you 'Here is an exemple'.
+
+## Creating events
+
+Look at event that already writed to learn how they works.
+
+## Handler
+
+To learn how the command handler work look first at handler event then follow the code. Normally you will pass by the file in the handler directory...
+
+## Suggestion & bugs
+
+For bugs please use github issues and for suggestion use pull request or contact me at jaymun723@yahoo.com.
 
 ## Other stuff
 
